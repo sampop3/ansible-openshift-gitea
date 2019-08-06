@@ -27,7 +27,6 @@ clean_deploy: false # remove existing gitea container
 
 gitea_service_name: gitea
 
-skip_tls_verify: true
 
 max_mem: 512Mi
 min_mem: 128Mi
