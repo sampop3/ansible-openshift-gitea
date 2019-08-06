@@ -1,0 +1,35 @@
+---
+gitea_image_version: 1.7.0 
+
+gitea_route: gitea-{{ project_name }}.127.0.0.1.nip.io
+
+gitea_admin_user: gitea 
+gitea_admin_password: gittea 
+
+gitea_user: developer
+gitea_password: developer
+
+gitea_generate_user_count: 0
+gitea_generate_user_format: demouser%02d
+
+project_name: gitea 
+project_display_name: Gitea
+project_desc: Gitea Git Server
+# project_annotations:
+
+openshift_cli: oc
+
+gitea_deploy_retry_delay: 30
+gitea_deploy_retry_count: 10
+
+ephemeral: false
+clean_deploy: false # remove existing gitea container
+
+gitea_service_name: gitea
+
+skip_tls_verify: true
+
+max_mem: 512Mi
+min_mem: 128Mi
+max_cpu: 400m
+min_cpu: 100m
