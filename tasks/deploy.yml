@@ -5,7 +5,6 @@
     {{ openshift_cli }} new-app -f https://raw.githubusercontent.com/wkulhanek/docker-openshift-gitea/master/openshift/gitea-persistent-template.yaml \
         --param=HOSTNAME={{ gitea_route }} \
         --param=GITEA_VERSION={{ gitea_image_version }} \
-        --param=SKIP_TLS_VERIFY={{ skip_tls_verify }} \
         --param=APPLICATION_NAME={{ gitea_service_name }} \
         -n {{ project_name }}
   when: not ephemeral|bool
@@ -15,7 +14,6 @@
     {{ openshift_cli }} new-app -f https://raw.githubusercontent.com/wkulhanek/docker-openshift-gitea/master/openshift/gitea-ephemeral-template.yaml \
         --param=HOSTNAME={{ gitea_route }} \
         --param=GITEA_VERSION={{ gitea_image_version }} \
-        --param=SKIP_TLS_VERIFY={{ skip_tls_verify }} \
         --param=APPLICATION_NAME={{ gitea_service_name }} \
         -n {{ project_name }}
   when: ephemeral|bool
