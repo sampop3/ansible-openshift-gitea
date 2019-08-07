@@ -19,15 +19,15 @@ Role Variables
 |`gitea_user`                | developer       | User account username |
 |`gitea_password`            | developer       | User account password |
 |`gitea_generate_user_count` | 0               | Number of users accounts to generate with the user account password |
-|`gitea_generate_user_format`| user%02d        | [printf style format](https://en.wikipedia.org/wiki/Printf_format_string) to use for generating user accounts |
+|`gitea_generate_user_format`| demouser%02d        | [printf style format](https://en.wikipedia.org/wiki/Printf_format_string) to use for generating user accounts |
 |`max_mem`                  | 2Gi             | Max memory allocated to gitea container |
 |`min_mem`                  | 512Mi           | Min memory allocated to gitea container |
 |`max_cpu`                  | 1               | Max cpu allocated to gitea container |
 |`min_cpu`                  | 200m            | Min cpu allocated to gitea container |
 |`clean_deploy`             | false           | Deploy a fresh gitea and delete the existing one if any |
 |`project_name`             | gitea            | OpenShift project name for the gitea container  |
-|`project_display_name`     | gitea            | OpenShift project display name for the gitea container  |
-|`project_desc`             | gitea Git Server | OpenShift project description for the gitea container |
+|`project_display_name`     | Gitea            | OpenShift project display name for the gitea container  |
+|`project_desc`             | Gitea Git Server | OpenShift project description for the gitea container |
 |`project_admin`            | -               | If set, the user to be assigned as project admin |
 |`project_annotations`      | -               | OpenShift project annotations for the gitea container |
 |`openshift_cli`            | oc              | OpenShift CLI command and arguments (e.g. auth)       | 
@@ -38,18 +38,15 @@ When listing this role in `requirements.yml`, make sure to pin the version of th
 
 ```
 - src: samrostampour.openshift_gitea
-  version: 1.1.0
+  version: 1.0.0
 ```  
 
 The following tables shows the version combinations that are tested and verified:
 
 | Role Version      | OpenShift Version |
 |-------------------|-------------------|
-| 1.0.x   | 3.7.x   |
 | 1.1.x   | 3.9.x, 3.10.x, 3.11.x |
 
-Note that if a version combination is not listed above, it does **NOT** mean that the latest role version 
-won't work on that OpensShift version. The above table is merely the combinations that we have tested and verified.
 
 
 Example Playbook
